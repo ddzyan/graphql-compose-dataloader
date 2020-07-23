@@ -3,7 +3,7 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/stoffern/graphql-compose-dataloader-new.svg)](https://greenkeeper.io/)
 [![Travis](https://img.shields.io/travis/stoffern/graphql-compose-dataloader-new.svg)]()
 [![npm version](https://img.shields.io/npm/v/graphql-compose-dataloader-new.svg?style=flat-square)](https://www.npmjs.com/package/graphql-compose-dataloader-new)
-[![npm](https://img.shields.io/npm/dt/graphql-compose-dataloader-new.svg)](https://github.com/ddzyan/graphql-compose-dataloader-new)
+[![npm](https://img.shields.io/npm/dt/graphql-compose-dataloader-new.svg)](https://www.npmjs.com/package/graphql-compose-dataloader-new)
 
 Add DataLoader to graphql-composer resolvers.
 
