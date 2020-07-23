@@ -1,4 +1,4 @@
-# graphql-compose-dataloader
+# graphql-compose-dataloader-new-new
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/stoffern/graphql-compose-dataloader-new.svg)](https://greenkeeper.io/)
 [![Travis](https://img.shields.io/travis/stoffern/graphql-compose-dataloader-new.svg)]()
@@ -10,7 +10,7 @@ Add DataLoader to graphql-composer resolvers.
 ### Installation
 
 ```
-npm install graphql-compose-dataloader --save
+npm install graphql-compose-dataloader-new --save
 ```
 
 Modules `graphql`, `graphql-compose` are in `peerDependencies`, so should be installed explicitly in your app. They have global objects and should not have ability to be installed as submodule.
@@ -20,7 +20,7 @@ Modules `graphql`, `graphql-compose` are in `peerDependencies`, so should be ins
 ```js
 import mongoose from 'mongoose';
 import composeWithMongoose from 'graphql-compose-mongoose';
-import composeWithDataLoader from 'graphql-compose-dataloader';
+import composeWithDataLoader from 'graphql-compose-dataloader-new';
 
 const LanguagesSchema = new mongoose.Schema({
   language: String,
