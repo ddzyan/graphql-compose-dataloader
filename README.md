@@ -4,6 +4,7 @@
 [![Travis](https://img.shields.io/travis/stoffern/graphql-compose-dataloader-new.svg)]()
 [![npm version](https://img.shields.io/npm/v/graphql-compose-dataloader-new.svg?style=flat-square)](https://www.npmjs.com/package/graphql-compose-dataloader-new)
 [![npm](https://img.shields.io/npm/l/graphql-compose-dataloader-new.svg?style=flat-square)](https://github.com/stoffern/graphql-compose-dataloader-new/blob/master/LICENSE)
+[![npm](https://img.shields.io/npm/dt/egg-apm-agent.svg)](https://github.com/ddzyan/graphql-compose-dataloader-new)
 
 Add DataLoader to graphql-composer resolvers.
 
