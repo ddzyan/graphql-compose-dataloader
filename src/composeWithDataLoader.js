@@ -67,7 +67,8 @@ export function composeWithDataLoader(
       setTimeout(() => {
         let res = findByIdsLoader.clear(rp)
       },options.cacheExpiration)
-      return findByIdsLoader.load(rp)
+      // 修改为调用loadMany，安排调度任务，来统一执行同一个eventLoop任务
+      return findByIdsLoader.loadMany(rp)
     })
   )
   
