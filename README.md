@@ -1,4 +1,4 @@
-# graphql-compose-dataloader-new-new
+# graphql-compose-dataloader-new
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/stoffern/graphql-compose-dataloader-new.svg)](https://greenkeeper.io/)
 [![Travis](https://img.shields.io/travis/stoffern/graphql-compose-dataloader-new.svg)]()
