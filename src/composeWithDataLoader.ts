@@ -7,14 +7,6 @@ export function composeWithDataLoader(
   typeComposer: TypeComposer,
   options: dataloaderOptions = {}
 ): TypeComposer {
-  // if (!(typeComposer instanceof TypeComposer)) {
-  //   throw new Error('You should provide TypeComposer instance to composeWithDataLoader method');
-  // }
-  //
-  //
-  /**
-   * Set defaults
-   */
   options = {
     cacheExpiration: options.cacheExpiration || 300,
     removeProjection: options.removeProjection || true,

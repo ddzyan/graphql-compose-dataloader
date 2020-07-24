@@ -1,17 +1,17 @@
 {
   "name": "graphql-compose-dataloader-new",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "Add DataLoader to graphql-composer resolvers.",
   "main": "lib/index.js",
   "jsnext:main": "es/index.js",
   "scripts": {
     "build": "npm run build-cjs && npm run build-es",
-    "build-cjs": "rimraf lib && babel src --ignore __tests__,__mocks__ -d lib",
-    "build-es": "rimraf es && cross-env BABEL_ENV=es babel src --ignore __tests__,__mocks__ -d es",
+    "build-cjs": "rimraf lib && babel src --extensions \".ts\" -d lib",
+    "build-es": "rimraf es && cross-env BABEL_ENV=es babel src --extensions \".ts\" --ignore __tests__,__mocks__ -d es",
     "coverage": "nyc npm run test",
     "link": "yarn link graphql-compose && yarn link",
     "unlink": "yarn unlink graphql-compose && yarn add graphql-compose",
-    "test": "mocha --compilers js:babel-core/register --reporter dot --timeout 20000 src/**/__tests__/**/*-test.js",
+    "test": "mocha --compilers js:babel-core/register --reporter dot --timeout 20000",
     "prepublish": "npm run build",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
