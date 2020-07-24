@@ -1,5 +1,6 @@
 export type dataloaderOptions = {
   cacheExpiration?: number,
-  removeProjection?: bool,
-  debug?: bool,
-}
+  removeProjection?: boolean,
+  debug?: boolean,
+  cache?: boolean,
+};

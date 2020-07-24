@@ -43,6 +43,7 @@ const LanguagesTC = composeWithDataLoader(composeWithMongoose(Languages), {
 | **`cacheExpiration`**  | `number`  | Expiration in number of milliseconds. This will clear the one request sendt via the resolver (_Default: 500_) |
 | **`removeProjection`** | `boolean` | Remove projection, this will request fields on the requested document and put it to cache (_Default: true_)   |
 | **`debug`**            | `boolean` | Enable debug? (_Default: false_)                                                                              |
+| **`cache`**            | `boolean` | Enable cache? (_Default: false_)                                                                              |
 
 ### License
 

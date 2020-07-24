@@ -19,6 +19,7 @@ export function composeWithDataLoader(
     cacheExpiration: options.cacheExpiration || 300,
     removeProjection: options.removeProjection || true,
     debug: options.debug || false,
+    cache: options.cache || false,
   };
 
   /**
@@ -36,16 +37,20 @@ export function composeWithDataLoader(
         let newKey = getHashKey(key);
         return newKey;
       },
+      cache: options.cache,
     }
   );
 
   typeComposer.setResolver(
     'findById',
     findByIdResolver.wrapResolve(next => rp => {
-      if (options.removeProjection) delete rp.projection;
-      setTimeout(() => {
-        let res = findByIdLoader.clear(rp);
-      }, options.cacheExpiration);
+      const { cacheExpiration, cache, removeProjection } = options;
+      if (removeProjection) delete rp.projection;
+      if (cacheExpiration > 0 && cache) {
+        setTimeout(() => {
+          findByIdsLoader.clear(rp);
+        }, cacheExpiration);
+      }
       return findByIdLoader.load(rp);
     })
   );
@@ -61,15 +66,21 @@ export function composeWithDataLoader(
         if (options.debug) console.log('New db request (findByIds)');
         resolve(resolveParamsArray.map(rp => findByIdResolver.resolve(rp)));
       }),
-    { cacheKeyFn: key => getHashKey(key) }
+    {
+      cacheKeyFn: key => getHashKey(key),
+      cache: options.cache,
+    }
   );
 
   typeComposer.setResolver(
     'findByIds',
     findByIdsResolver.wrapResolve(fn => rp => {
-      setTimeout(() => {
-        let res = findByIdsLoader.clear(rp);
-      }, options.cacheExpiration);
+      const { cacheExpiration, cache } = options;
+      if (cacheExpiration > 0 && cache) {
+        setTimeout(() => {
+          findByIdsLoader.clear(rp);
+        }, cacheExpiration);
+      }
       // 修改为调用loadMany，安排调度任务，来统一执行同一个eventLoop任务
       return findByIdsLoader.loadMany(rp);
     })
